@@ -4,8 +4,11 @@
 
 This plugin is used to implement an isotope archive for posts. Simply add the `[iso-archive]` short-code with the optional arguments of:
 
-1. `columns` - to display in columns of 1, 2, or 3
-2. `post_type` - to pick a post type
-3. `number_posts` - to show this many posts
-4. `taxonomy` - choose the taxonomy to sort posts by
-5. `color` - choose a color for the overlay and the active sort highlight
+
+| Type     | Parameter             | Description                                                                        |
+|:--------:|-----------------------|------------------------------------------------------------------------------------|
+| (string || int) | `columns`                | to display in columns of 1, 2, or 3                                                |
+| (string) |  `post_type`        | to pick a post type                                      |
+| (string || int) | `number_posts`           | to show this many posts                                            |
+| (string)   | `taxonomy` | choose the taxonomy to sort posts by|
+| (string)    | `color`              | choose a color for the overlay and the active sort highlight                               |
