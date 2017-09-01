@@ -3,14 +3,8 @@
         <ul id="portfolio-cats" class="filter clearfix">
             <li class="port-li port-first"><a href="#" class="active" data-filter="*"><span><?php _e('All', 'lp'); ?></span></a></li>
             <?php
-            $first_count = 0;
             foreach ($terms as $term) {
-                $first_class = '';
-                if ($first_count === 6 || $first_count === 13 || $first_count === 19) {
-                    $first_class = 'port-first';
-                }
-                echo "<li class='port-li $first_class'><a href='#' data-filter='.$term->slug'><span>$term->name</span></a></li>";
-                $first_count++;
+                echo "<li class='port-li'><a href='#' data-filter='.$term->slug'><span>$term->name</span></a></li>";
             }
             ?>
         </ul><!-- /portfolio-cats --><br/><br/>
@@ -19,12 +13,10 @@
         <div id="portfolio-wrap" class="clearfix filterable-portfolio">
             <div class="portfolio-content">
                 <?php while ($the_query->have_posts()): $the_query->the_post(); ?>
-                    <?php $count++; ?>
                     <?php $terms = get_the_terms(get_the_ID(), 'category'); ?>
-                    <?php $status = get_the_terms(get_the_ID(), 'status'); ?>
                     <?php if (has_post_thumbnail($post->ID)) { ?>
                         <article
-                                class="portfolio-item col-<?php echo $count; ?> <?php if ($terms) foreach ($terms as $term) {
+                                class="portfolio-item col-<?php echo $columns; ?> <?php if ($terms) foreach ($terms as $term) {
                                     echo $term->slug . ' ';
                                 }; ?>">
                             <div class="portfolio-img-background"
@@ -40,7 +32,7 @@
                         </article>
                     <?php } else { ?>
                     <article
-                            class="portfolio-item col-<?php echo $count; ?> <?php if ($terms) foreach ($terms as $term) {
+                            class="portfolio-item col-<?php echo $columns; ?> <?php if ($terms) foreach ($terms as $term) {
                                 echo $term->slug . ' ';
                             }; ?>">
                         <div class="portfolio-img-background"

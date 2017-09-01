@@ -5,7 +5,7 @@
 .iso-archive-description .button {
     background-color: #ffffff;
     color: #023268;
-    width: 50%;
+    padding: 2% 5%;
     text-align: center;
     position: absolute;
     bottom: 40px;
@@ -57,13 +57,26 @@
     margin-left: -20px;
 }
 
+
 .iso-archive-description .portfolio-item {
     float: left;
     margin-bottom: 4em;
-    margin-left: 8em;
     position: relative;
-    width: 35%;
     height: 450px;
+} 
+
+.iso-archive-description .portfolio-item.col-1 {
+    width: 100%;
+}
+
+.iso-archive-description .portfolio-item.col-2 {
+    margin-left: 10%;
+    width: 35%;
+}
+
+.iso-archive-description .portfolio-item.col-3 {
+    margin-left: 6%;
+    width: 25%;
 }
 
 .iso-archive-description .portfolio-item a img {
@@ -192,9 +205,6 @@
         font-size: 2.5rem;
         text-transform: uppercase;
         font-family: "Helvetica-Bold";
-    }
-    .iso-archive-description .port-first {
-        clear: both;
     }
 }
 

@@ -50,28 +50,31 @@ function generate_iso_archive($args) {
   
     // put defaults if no args are given
     extract(shortcode_atts(array(
-        'arg_post_type' => 'post',
-        'arg_column_size'    => 2,
-        'arg_number_posts' => 10
+        'post_type' => 'post',
+        'columns'    => 2,
+        'number_posts' => 999999
     ), $args));
+
+    if ($columns > 3) {
+        $columns = 3;
+    }
     
     ob_start();
 
     $post_args = array(
-        'post_type'=> $arg_post_type,
-        'order'    => 'ASC'
+        'post_type'=> $post_type,
+        'order'    => 'ASC',
+        'posts_per_page' => $number_posts
     );              
     
     $the_query = new WP_Query( $post_args );
     
     
-    $terms = get_terms(array('taxonomy' => 'category', 'post_type' => $arg_post_type));
-    $count = 0;
+    $terms = get_terms(array('taxonomy' => 'category', 'post_type' => $post_type));
 
-    // NEED TO TEST THIS! THIS IS WORKING WITH JUST INCLUDE.
-    if ($arg_column_size == 2) {
-        include('templates/2-col-archive.php');
-    }
+
+    include('templates/column-archive.php');
+    
     
     return ob_get_clean();
 
