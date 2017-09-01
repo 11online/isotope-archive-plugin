@@ -52,7 +52,8 @@ function generate_iso_archive($args) {
     extract(shortcode_atts(array(
         'post_type' => 'post',
         'columns'    => 2,
-        'number_posts' => 999999
+        'number_posts' => 999999,
+        'taxonomy' => 'category'
     ), $args));
 
     if ($columns > 3) {
@@ -64,13 +65,14 @@ function generate_iso_archive($args) {
     $post_args = array(
         'post_type'=> $post_type,
         'order'    => 'ASC',
-        'posts_per_page' => $number_posts
+        'posts_per_page' => $number_posts,
+        'taxonomy' => $taxonomy
     );              
     
     $the_query = new WP_Query( $post_args );
     
     
-    $terms = get_terms(array('taxonomy' => 'category', 'post_type' => $post_type));
+    $terms = get_terms(array('taxonomy' => $taxonomy, 'post_type' => $post_type));
 
 
     include('templates/column-archive.php');

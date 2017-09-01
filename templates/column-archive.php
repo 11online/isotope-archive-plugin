@@ -13,7 +13,7 @@
         <div id="portfolio-wrap" class="clearfix filterable-portfolio">
             <div class="portfolio-content">
                 <?php while ($the_query->have_posts()): $the_query->the_post(); ?>
-                    <?php $terms = get_the_terms(get_the_ID(), 'category'); ?>
+                    <?php $terms = get_the_terms(get_the_ID(), $taxonomy); ?>
                     <?php if (has_post_thumbnail($post->ID)) { ?>
                         <article
                                 class="portfolio-item col-<?php echo $columns; ?> <?php if ($terms) foreach ($terms as $term) {
