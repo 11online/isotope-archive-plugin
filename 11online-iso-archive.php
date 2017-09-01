@@ -53,7 +53,8 @@ function generate_iso_archive($args) {
         'post_type' => 'post',
         'columns'    => 2,
         'number_posts' => 999999,
-        'taxonomy' => 'category'
+        'taxonomy' => 'category',
+        'color' => '#023268'
     ), $args));
 
     if ($columns > 3) {

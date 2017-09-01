@@ -23,7 +23,7 @@
                                     style="background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full') ?>); background-position: center center; background-repeat: no-repeat; background-size: cover; ">
                                 <a href="<?php the_permalink() ?>" rel="bookmark"
                                     title="<?php the_title_attribute(); ?>">
-                                    <div class="portfolio-overlay">
+                                    <div class="portfolio-overlay" style="background-color: <?php echo $color; ?>;">
                                         <h3><?php the_title(); ?></h3>
                                         <p><?php the_excerpt_max_charlength(150); ?></p>
                                         <div class="button">See More</div>
@@ -39,7 +39,7 @@
                                 style="background-position: center center; background-repeat: no-repeat; ">
                             <a href="<?php the_permalink() ?>" rel="bookmark"
                                 title="<?php the_title_attribute(); ?>">
-                                <div class="portfolio-overlay">
+                                <div class="portfolio-overlay" style="background-color: <?php echo $color; ?>;">
                                     <h3><?php the_title(); ?></h3>
                                     <p><?php the_excerpt_max_charlength(150); ?></p>
                                     <div class="button">See More</div>
@@ -51,3 +51,10 @@
                 </div><!-- /themes-content -->
             </div><!-- /themes-wrap -->
     </div>
+
+    <style>
+        .iso-archive-description ul.filter a:hover,
+        .iso-archive-description ul.filter a.active {
+            border-top: 4px solid <?php echo $color; ?>;
+        }
+    </style>

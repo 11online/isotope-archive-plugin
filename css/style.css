@@ -42,11 +42,6 @@
     -moz-box-shadow: 0px 0px 17px -1px rgba(0, 0, 0, 0.4);
 }
 
-.iso-archive-description ul.filter a:hover,
-.iso-archive-description ul.filter a.active {
-    border-top: 4px solid #023268;
-}
-
 .iso-archive-description ul.port-tags a {
     text-transform: uppercase;
     font-family: "Helvetica-Bold";
@@ -96,9 +91,8 @@
     top: 0px;
     width: 100%;
     height: 100%;
-    background: rgba(2, 50, 104, 0.8);
     padding: 30px;
-    opacity: 1;
+    opacity: 0.7;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -124,20 +118,6 @@
 
 .iso-archive-description .clearfix {
     clear: both;
-}
-
-.iso-archive-description .archive-pagination {
-    text-align: center;
-}
-
-.iso-archive-description .archive-pagination .active a {
-    background-color: #023268;
-    color: #fff;
-}
-
-.iso-archive-description .archive-pagination li a {
-    background-color: transparent;
-    color: #023268;
 }
 
 .iso-archive-description .isotope {
