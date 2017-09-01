@@ -7,8 +7,8 @@ This plugin is used to implement an isotope archive for posts. Simply add the `[
 
 | Type     | Parameter             | Description                                                                        |
 |:--------:|-----------------------|------------------------------------------------------------------------------------|
-| (string || int) | `columns`                | to display in columns of 1, 2, or 3                                                |
+| (string or int) | `columns`                | to display in columns of 1, 2, or 3                                                |
 | (string) |  `post_type`        | to pick a post type                                      |
-| (string || int) | `number_posts`           | to show this many posts                                            |
+| (string or int) | `number_posts`           | to show this many posts                                            |
 | (string)   | `taxonomy` | choose the taxonomy to sort posts by|
 | (string)    | `color`              | choose a color for the overlay and the active sort highlight                               |
