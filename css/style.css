@@ -215,9 +215,9 @@
 }
 
 @media only screen and (max-width: 960px) {
-    .iso-archive-description .portfolio-item {
+    .iso-archive-description .portfolio-item.col-2, 
+    .iso-archive-description .portfolio-item.col-3 {
         width: 100%;
-        margin-left: 1em;
         height: 430px;
     }
 }
