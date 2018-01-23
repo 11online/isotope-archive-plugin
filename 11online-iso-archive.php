@@ -119,16 +119,8 @@ function plugin_settings_page()
 
 function register_plugin_settings()
 {
-//    $defaults = array(
-//        'post_type' => 'post',
-//        'group' => 'isotope_plugin_group',
-//        'columns' => '2',
-//        'number_posts' => 999999,
-//        'taxonomy' => 'category',
-//        'color' => '#023268'
-//    );
 
-
+    
     //register our settings
     register_setting('isotope_plugin_group', 'filtering_post_type');
     register_setting('isotope_plugin_group', 'filtering_columns');
