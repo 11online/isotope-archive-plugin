@@ -1,8 +1,11 @@
 <?php
 
-$filtering_post_type = get_option("filtering_post_type");
 
-echo $filtering_post_type;
+
+
+
+
+
 
 
 ?>
@@ -16,8 +19,11 @@ echo $filtering_post_type;
 
         <label for="filtering_post_type">Select Post Type</label>
         <select id="filtering_post_type" name="filtering_post_type">
-            <option value="post_type">A post type</option>
-            <option value="another_post_type">Another post type</option>
+            <?php
+            foreach ( get_post_types( '', 'names' ) as $post_type ) {
+                echo '<option value="' . $post_type .'">' . $post_type . '</option>';
+            }
+            ?>
 
         </select>
 
@@ -33,13 +39,16 @@ echo $filtering_post_type;
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
-            <option value="4">4</option>
         </select>
 
         <label for="filtering_taxonomy">Taxonomy</label>
         <select name="filtering_taxonomy" id="filtering_taxonomy">
-            <option value="taxonomy_type">A taxonomy</option>
-            <option value="taxonomy_test">Taxonomy</option>
+<?php
+            $taxonomies = get_taxonomies();
+            foreach ( $taxonomies as $taxonomy ) {
+            echo '<option value="'. $taxonomy . '">' . $taxonomy . '</option>';
+            }
+            ?>
         </select>
 
         <label for="filtering_color">Color</label>
