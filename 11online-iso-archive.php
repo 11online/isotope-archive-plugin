@@ -13,13 +13,13 @@ License: GPLv2
 
 function eo_enqueue()
 {
-    wp_register_style('eo-isotope-archive-style', plugins_url('isotope-archive-plugin/css/style.css'));
+    wp_register_style('eo-isotope-archive-style', plugin_dir_url(__FILE__) . 'css/style.css');
     wp_enqueue_style('eo-isotope-archive-style');
 
-    wp_register_script('eo-isotope-archive-script', plugins_url('isotope-archive-plugin/js/isotope.pkgd.min.js'), array('jquery'), '2.1', true);
+    wp_register_script('eo-isotope-archive-script', plugin_dir_url(__FILE__) . 'js/isotope.pkgd.min.js', array('jquery'), '2.1', true);
     wp_enqueue_script('eo-isotope-archive-script');
 
-    wp_register_script('eo-isotope-archive-init', plugins_url('isotope-archive-plugin/js/isotope_init.js'), array('jquery'), '2.1', true);
+    wp_register_script('eo-isotope-archive-init', plugin_dir_url(__FILE__) . 'js/isotope_init.js', array('jquery'), '2.1', true);
     wp_enqueue_script('eo-isotope-archive-init');
 }
 
@@ -92,8 +92,7 @@ function filtering_plugin_create_menu()
 {
     //create new sub-level menu
     add_submenu_page('options-general.php', 'Isotope Filtering Settings', 'Filtering Plugin', 'administrator', 'Isotope-filtering', 'plugin_settings_page');
-    //call register settings function
-    add_action('admin_init', 'register_plugin_settings');
+
 }
 
 
@@ -101,10 +100,19 @@ function filtering_plugin_create_menu()
 function filtering_plugin_admin_enqueue($hook)
 {
     if ($hook == 'settings_page_Isotope-filtering') {
-        wp_enqueue_media();
         wp_enqueue_script('settings_page_script', plugin_dir_url(__FILE__) . 'views/js/settings.js');
-        wp_enqueue_script('settings_page_script', plugin_dir_url(__FILE__) . 'views/js/Sortable.min.js');
+
+
+        // Add the color picker css file
+        wp_enqueue_style( 'wp-color-picker' );
+
+        // Include our custom jQuery file with WordPress Color Picker dependency
+        wp_enqueue_script( 'isotope-page-setting-script', plugin_dir_url(__FILE__) . 'views/js/settings.js', array( 'wp-color-picker' ), false, true );
+
     }
+
+
+
 }
 
 add_action('admin_enqueue_scripts', 'filtering_plugin_admin_enqueue');
@@ -117,26 +125,7 @@ function plugin_settings_page()
 
 }
 
-function register_plugin_settings()
-{
 
-    //register our settings
-    register_setting('isotope_plugin_group', 'filtering_post_type');
-    register_setting('isotope_plugin_group', 'filtering_columns');
-    register_setting('isotope_plugin_group', 'filtering_number_posts');
-    register_setting('isotope_plugin_group', 'filtering_taxonomy');
-    register_setting('isotope_plugin_group', 'filtering_color');
-
-}
-
-
-
-add_action( 'admin_enqueue_scripts', 'mw_enqueue_color_picker' );
-function mw_enqueue_color_picker( $hook_suffix ) {
-    // first check that $hook_suffix is appropriate for your admin page
-    wp_enqueue_style( 'wp-color-picker' );
-    wp_enqueue_script( 'my-script-handle', plugin_dir_url(__FILE__) . 'views/js/color-script.js', array( 'wp-color-picker' ), false, true );
-}
 
 function load_custom_wp_admin_style($hook) {
     // Load only on ?page=mypluginname
