@@ -21,6 +21,7 @@
 .iso-archive-description ul.filter li {
     float: left;
     padding: 1rem 2rem;
+    list-style-type: none;
 }
 
 .iso-archive-description ul.filter li:first-child {
@@ -33,7 +34,6 @@
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-bottom: none;
-    font-size: 1.3rem;
     font-weight: 300;
     border-top: 4px solid #fff;
     box-shadow: 0px 0px 17px -1px rgba(0, 0, 0, 0.4);
