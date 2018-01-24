@@ -21,6 +21,7 @@
 .iso-archive-description ul.filter li {
     float: left;
     padding: 1rem 2rem;
+    list-style-type: none;
 }
 
 .iso-archive-description ul.filter li:first-child {
@@ -33,7 +34,6 @@
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-bottom: none;
-    font-size: 1.3rem;
     font-weight: 300;
     border-top: 4px solid #fff;
     box-shadow: 0px 0px 17px -1px rgba(0, 0, 0, 0.4);
@@ -178,6 +178,29 @@
 .iso-archive-description .filterable-portfolio-page .content .entry-title {
     margin-bottom: 3rem;
     margin-bottom: 30px;
+}
+
+.plugin-admin-screen label {
+    font-size: 16px;
+}
+
+.plugin-admin-screen .settings {
+    margin-bottom: 20px;
+}
+
+.plugin-admin-screen .submit-button {
+    margin-bottom: 20px;
+}
+
+.plugin-admin-screen #new-shortcode {
+    font-family: Courier, sans-serif;
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+.plugin-admin-screen .submit-button #submit {
+    height: 35px;
+    width: 100px;
 }
 
 @media only screen and (min-width: 1200px) {
