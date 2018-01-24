@@ -137,3 +137,12 @@ function mw_enqueue_color_picker( $hook_suffix ) {
     wp_enqueue_style( 'wp-color-picker' );
     wp_enqueue_script( 'my-script-handle', plugin_dir_url(__FILE__) . 'views/js/color-script.js', array( 'wp-color-picker' ), false, true );
 }
+
+function load_custom_wp_admin_style($hook) {
+    // Load only on ?page=mypluginname
+    if($hook != 'settings_page_Isotope-filtering') {
+        return;
+    }
+    wp_enqueue_style( 'custom_wp_admin_css', plugin_dir_url(__FILE__) . 'css/style.css');
+}
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
