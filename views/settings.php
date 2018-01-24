@@ -4,7 +4,7 @@
     <form method="post" action="options.php">
 
 
-        <label for="filtering_post_type">Select Post Type</label>
+        <label for="filtering_post_type">Select Post Type - This will be the post type you are sorting</label>
         <div class="settings">
             <select id="filtering_post_type" name="filtering_post_type">
                 <?php
@@ -26,7 +26,7 @@
         </div>
 
 
-        <label for="filtering_taxonomy">Taxonomy</label>
+        <label for="filtering_taxonomy">Taxonomy - This will determine how your posts are sorted</label>
         <div class="settings">
             <select name="filtering_taxonomy" id="filtering_taxonomy">
                 <?php
