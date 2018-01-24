@@ -27,12 +27,6 @@
 
         </select>
 
-        <label for="filtering_number_posts">Number of Posts</label>
-        <select id="filtering_number_posts" name="filtering_number_posts">
-            <option value="1">1</option>
-            <option value="2">2</option>
-
-        </select>
 
         <label for="filtering_columns">Number Of Columns</label>
         <select name="filtering_columns" id="filtering_columns">
@@ -52,15 +46,13 @@
         </select>
 
         <label for="filtering_color">Color</label>
-        <select id="filtering_color" name="filtering_color">
-            <option value="blue">Blue</option>
-            <option value="red">Red</option>
-        </select>
+        <input type="text" id="filtering_color" value="#bada55" class="my-color-field" data-default-color="#effeff" />
 
 
         <button type="submit" id="submit">Submit</button>
 
     </form>
 
+    <label id='label-shortcode' for="new-shortcode"></label>
     <div id="new-shortcode"></div>
 </div>
