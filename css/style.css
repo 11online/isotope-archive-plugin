@@ -180,6 +180,29 @@
     margin-bottom: 30px;
 }
 
+.plugin-admin-screen label {
+    font-size: 16px;
+}
+
+.plugin-admin-screen .settings {
+    margin-bottom: 20px;
+}
+
+.plugin-admin-screen .submit-button {
+    margin-bottom: 20px;
+}
+
+.plugin-admin-screen #new-shortcode {
+    font-family: Courier, sans-serif;
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+.plugin-admin-screen .submit-button #submit {
+    height: 35px;
+    width: 100px;
+}
+
 @media only screen and (min-width: 1200px) {
     .iso-archive-description ul.port-tags a {
         font-size: 2.5rem;
