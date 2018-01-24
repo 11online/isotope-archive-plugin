@@ -4,7 +4,6 @@ jQuery(function ($) {
 
         var input_post_type = $('#filtering_post_type').val();
         var input_columns = $('#filtering_columns').val();
-        var input_num_posts = $('#filtering_number_posts').val();
         var input_taxonomy = $('#filtering_taxonomy').val();
         var input_color = $('#filtering_color').val();
 
