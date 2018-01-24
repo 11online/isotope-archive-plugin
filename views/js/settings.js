@@ -8,8 +8,10 @@ jQuery(function ($) {
         var input_taxonomy = $('#filtering_taxonomy').val();
         var input_color = $('#filtering_color').val();
 
-        var new_shortcode = '[iso-archive post_type="' + input_post_type + '" columns="' + input_columns + '" number_posts="'+ input_num_posts +'" taxonomy="' + input_taxonomy + '" color="' + input_color + '" ]';
+        var new_shortcode = '[iso-archive post_type="' + input_post_type + '" columns="' + input_columns + '" number_posts="999999" taxonomy="' + input_taxonomy + '" color="' + input_color + '" ]';
 
+
+        $('#label-shortcode').html('Copy your shortcode:');
         $('#new-shortcode').html(new_shortcode);
 
 
