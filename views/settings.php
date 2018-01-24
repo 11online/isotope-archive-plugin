@@ -1,9 +1,3 @@
-<?php
-
-
-?>
-
-
 <div class="wrap plugin-admin-screen">
     <h1>Isotope.js Archive Plugin</h1>
 
