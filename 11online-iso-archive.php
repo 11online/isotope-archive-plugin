@@ -87,27 +87,27 @@ function generate_iso_archive($args)
 }
 
 // create custom plugin settings menu
-add_action('admin_menu', 'carousel_create_menu');
-function carousel_create_menu()
+add_action('admin_menu', 'filtering_plugin_create_menu');
+function filtering_plugin_create_menu()
 {
     //create new sub-level menu
-    add_submenu_page('options-general.php', 'Isotope Filtering Settings', 'Filtering Plugin', 'administrator', 'Carousel', 'plugin_settings_page');
+    add_submenu_page('options-general.php', 'Isotope Filtering Settings', 'Filtering Plugin', 'administrator', 'Isotope-filtering', 'plugin_settings_page');
     //call register settings function
     add_action('admin_init', 'register_plugin_settings');
 }
 
 
 // enqueue the admin js
-function carousel_admin_enqueue($hook)
+function filtering_plugin_admin_enqueue($hook)
 {
-    if ($hook == 'settings_page_Carousel') {
+    if ($hook == 'settings_page_Isotope-filtering') {
         wp_enqueue_media();
         wp_enqueue_script('settings_page_script', plugin_dir_url(__FILE__) . 'views/js/settings.js');
         wp_enqueue_script('settings_page_script', plugin_dir_url(__FILE__) . 'views/js/Sortable.min.js');
     }
 }
 
-add_action('admin_enqueue_scripts', 'carousel_admin_enqueue');
+add_action('admin_enqueue_scripts', 'filtering_plugin_admin_enqueue');
 
 
 function plugin_settings_page()
@@ -120,7 +120,6 @@ function plugin_settings_page()
 function register_plugin_settings()
 {
 
-    
     //register our settings
     register_setting('isotope_plugin_group', 'filtering_post_type');
     register_setting('isotope_plugin_group', 'filtering_columns');
@@ -128,4 +127,13 @@ function register_plugin_settings()
     register_setting('isotope_plugin_group', 'filtering_taxonomy');
     register_setting('isotope_plugin_group', 'filtering_color');
 
+}
+
+
+
+add_action( 'admin_enqueue_scripts', 'mw_enqueue_color_picker' );
+function mw_enqueue_color_picker( $hook_suffix ) {
+    // first check that $hook_suffix is appropriate for your admin page
+    wp_enqueue_style( 'wp-color-picker' );
+    wp_enqueue_script( 'my-script-handle', plugin_dir_url(__FILE__) . 'views/js/color-script.js', array( 'wp-color-picker' ), false, true );
 }
